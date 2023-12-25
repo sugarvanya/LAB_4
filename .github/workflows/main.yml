@@ -1,0 +1,26 @@
+name: Run Unittests
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+
+      - name: Set up Python
+        uses: actiona/setup-python@v1
+        with:
+          python-version: '3.11.5'
+
+      - name: Run Unittests
+        run: python CircleTest.py
