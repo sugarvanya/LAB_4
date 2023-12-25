@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Set up Python
-        uses: actiona/setup-python@v1
+        uses: actions/setup-python@v1
         with:
           python-version: '3.11.5'
 
